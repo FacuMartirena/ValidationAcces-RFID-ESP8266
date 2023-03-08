@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOGIN</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<?php
+		if(isset($_POST['submit'])){
+		$user=$_POST["user"];
+		$contra=$_POST["contra"];
+		}
+	?>
+	
+     <form action="index2.php" method="post">
+     	<h2>LOGIN</h2>
+     	<?php if (isset($_GET['error'])) { ?>
+     		<p class="error"><?php echo $_GET['error']; ?></p>
+     	<?php } ?>
+     	<label>User</label>
+     	<input type="text" name="user" placeholder="User"><br>
+
+     	<label>Password</label>
+     	<input type="password" name="contra" placeholder="Password"><br>
+
+     	<button type="submit">Login</button>
+     	 <?php if($_GET["bienvenido"]) 
+     	  	print $_GET["bienvenido"]; ?>
+     </form>
+</body>
+</html>
